@@ -1,0 +1,42 @@
+
+#------------ADMIN---------------
+admin:
+    path: /admin
+    controller: App\Controller\Admin\AdminController::index
+
+#------------FRONTEND---------------
+
+# category controller routes
+front_category_index:
+    path: /frontend/category
+    controller: App\Controller\Frontend\CategoryController::index
+front_category_create:
+    path: /frontend/category/create
+    controller: App\Controller\Frontend\CategoryController::create
+front_category_edit:
+    path: /frontend/category/edit/{id}
+    controller: App\Controller\Frontend\CategoryController::edit
+front_category_show:
+    path: /frontend/category/show/{id}
+    controller: App\Controller\Frontend\CategoryController::show
+front_category_delete:
+    path: frontend/category/delete/{id}
+    controller: App\Controller\Frontend\CategoryController::delete
+
+# product controller routes
+front_product_index:
+    path: /frontend/product
+    controller: App\Controller\Frontend\ProductController::index
+front_product_create:
+    path: /frontend/product/create
+    controller: App\Controller\Frontend\ProductController::create
+
+
+
+
+#------------ERRORS---------------
+# category controller routes
+when@dev:
+    _errors:
+        resource: '@FrameworkBundle/Resources/config/routing/errors.xml'
+        prefix: /_error

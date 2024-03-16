@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class=" container example-wrapper">
+    <h1>Categories</h1>
+    <ul>
+        {% for category in categories %}
+        <li><code><a href="{{ path('front_category_show', {'id': category.id}) }}">{{ category.name }} - id: {{ category.id }} </a></code></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
